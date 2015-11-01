@@ -18,7 +18,7 @@ Observe network state in Object-C for iOS.
 
 ## Screenshot
 
-![](https://github.com/mconintet/MOINetworkState/blob/master/screenshot.gif)
+![](https://raw.githubusercontent.com/mconintet/MOINetworkState/master/screenshot.gif)
 
 ## Installation
 
