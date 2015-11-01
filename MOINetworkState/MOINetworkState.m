@@ -42,7 +42,10 @@ NSString* MOINetworkStateText(NSInteger code)
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter]
+        removeObserver:self
+                  name:kReachabilityChangedNotification
+                object:nil];
 }
 
 - (instancetype)initWithDidChangeHandler:(MOINetworkStateDidChangeHandler)handler
@@ -51,7 +54,11 @@ NSString* MOINetworkStateText(NSInteger code)
     if (self) {
         _didChangeHandler = handler;
 
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+        [[NSNotificationCenter defaultCenter]
+            addObserver:self
+               selector:@selector(reachabilityChanged:)
+                   name:kReachabilityChangedNotification
+                 object:nil];
 
         _internetReachability = [Reachability reachabilityForInternetConnection];
         [_internetReachability startNotifier];
@@ -61,7 +68,6 @@ NSString* MOINetworkStateText(NSInteger code)
 
 - (void)reachabilityChanged:(NSNotification*)note
 {
-    NSLog(@"reachabilityChanged");
     Reachability* curReach = [note object];
     NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
     if (_didChangeHandler != nil) {
