@@ -7,5 +7,5 @@ Pod::Spec.new do |spec|
   spec.summary      = 'Listen network state in Object-C for iOS'
   spec.source       = { :git => 'https://github.com/mconintet/MOINetworkState.git', :tag => '0.0.1' }
   spec.source_files = 'MOINetworkState'
-  spec.ios.deployment_target = '9.0'
+  spec.ios.deployment_target = '8.0'
 end
